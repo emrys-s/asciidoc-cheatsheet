@@ -1,19 +1,10 @@
 pipeline {
   agent any
   stages {
-    stage('Get the source') {
-      parallel {
-        stage('Get the source') {
-          steps {
-            git(url: 'https://github.com/emrys-s/devops_logbook', branch: 'master')
-          }
-        }
-        stage('echo ') {
-          steps {
-            sh '''pwd;
+    stage('echo ') {
+      steps {
+        sh '''pwd;
 env;'''
-          }
-        }
       }
     }
     stage('Build a pdf') {
